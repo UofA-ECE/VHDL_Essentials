@@ -10,7 +10,7 @@
 -- approaches and methodologies
 -- Additional Comments:
 -- Copyright : University of Alberta, 2022
--- License : MIT
+-- License : CC0 1.0 Universal
 ----------------------------------------------------------------------------------
 
 
