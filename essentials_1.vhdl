@@ -8,7 +8,7 @@
 -- Description : In this file we go over the process of declaring an entity in different ways using VHDL
 -- Additional Comments:
 -- Copyright : University of Alberta, 2022
--- License : MIT
+-- License : CC0 1.0 Universal
 ----------------------------------------------------------------------------------
 
 
