@@ -1,0 +1,57 @@
+$date
+  Wed Oct 26 09:42:35 2022
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module majority_tb $end
+$var reg 3 ! m_input[2:0] $end
+$var reg 1 " majority_bit $end
+$scope module uut $end
+$var reg 3 # m_input[2:0] $end
+$var reg 1 $ majority_bit $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b000 !
+0"
+b000 #
+0$
+#10000000
+b001 !
+b001 #
+#20000000
+b010 !
+b010 #
+#30000000
+b011 !
+1"
+b011 #
+1$
+#40000000
+b100 !
+0"
+b100 #
+0$
+#50000000
+b101 !
+1"
+b101 #
+1$
+#60000000
+b110 !
+b110 #
+#70000000
+b111 !
+b111 #
+#80000000

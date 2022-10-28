@@ -1,0 +1,18 @@
+v 4
+file . "majority_tb.vhdl" "a7821e4839b85169597935b40def3c032abfa902" "20221026154232.011":
+  entity majority_tb at 14( 506) + 0 on 133;
+  architecture behavioral of majority_tb at 21( 616) + 0 on 134;
+file . "or_gate.vhdl" "0bfbfb6364f31bc80908c41bd9e7a44f3b87800c" "20221026154232.009":
+  entity or_gate at 1( 0) + 0 on 124;
+  architecture behavioral of or_gate at 13( 182) + 0 on 125;
+file . "and_gate.vhdl" "84c7458421ff1ce83f44310c30a4021b80c83c1f" "20221026154232.008":
+  entity and_gate at 1( 0) + 0 on 122;
+  architecture behavioral of and_gate at 13( 186) + 0 on 123;
+file . "majority.vhdl" "25ed1cc19e257e9d479d46c230608eda9591cb48" "20221026154232.010":
+  entity majority at 18( 664) + 0 on 126;
+  architecture behavioral of majority at 39( 1297) + 0 on 127;
+  architecture behavioral1 of majority at 66( 2251) + 0 on 128;
+  architecture behavioral2 of majority at 86( 2877) + 0 on 129;
+  architecture behavioral3 of majority at 102( 3389) + 0 on 130;
+  architecture behavioral4 of majority at 117( 3856) + 0 on 131;
+  architecture structural of majority at 150( 5297) + 0 on 132;
