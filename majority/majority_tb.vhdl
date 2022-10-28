@@ -8,7 +8,7 @@
 -- Description : This file is a testbench for a 3 bit majority circuit
 -- Additional Comments:
 -- Copyright : University of Alberta, 2022
--- License : MIT
+-- License : CC0 1.0 Universal
 ----------------------------------------------------------------------------------
 
 LIBRARY IEEE;
