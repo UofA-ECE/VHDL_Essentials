@@ -8,7 +8,7 @@
 -- Description : In this file go over a simple design for a two input or gate
 -- Additional Comments:
 -- Copyright : University of Alberta, 2022
--- License : MIT
+-- License : CC0 1.0 Universal
 ----------------------------------------------------------------------------------
 
 LIBRARY IEEE;
