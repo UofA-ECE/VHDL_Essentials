@@ -1,0 +1,56 @@
+$date
+  Thu Nov  3 15:06:11 2022
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module demux_tb $end
+$var reg 1 ! d $end
+$var reg 1 " sel $end
+$var reg 1 # dmux0 $end
+$var reg 1 $ dmux1 $end
+$scope module dut $end
+$var reg 1 % d $end
+$var reg 1 & sel $end
+$var reg 1 ' dmux0 $end
+$var reg 1 ( dmux1 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+1!
+0"
+1#
+0$
+1%
+0&
+1'
+0(
+#2000000
+1"
+0#
+1$
+1&
+0'
+1(
+#4000000
+0!
+0$
+0%
+0(
+#6000000
+0"
+0&
+#8000000
+1!
+1#
+1%
+1'
+#10000000
