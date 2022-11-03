@@ -1,0 +1,45 @@
+$date
+  Thu Nov  3 12:54:45 2022
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module my_and_tb $end
+$var reg 1 ! a $end
+$var reg 1 " b $end
+$var reg 1 # y $end
+$scope module dut $end
+$var reg 1 $ a $end
+$var reg 1 % b $end
+$var reg 1 & y $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+0!
+0"
+0#
+0$
+0%
+0&
+#4000000
+1"
+1%
+#8000000
+1!
+0"
+1$
+0%
+#12000000
+1"
+1#
+1%
+1&
+#16000000
