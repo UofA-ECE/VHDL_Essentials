@@ -1,0 +1,61 @@
+$date
+  Mon Nov  7 15:28:10 2022
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module arithmetic_unit_tb $end
+$var reg 2 ! operation[1:0] $end
+$var reg 16 " a[15:0] $end
+$var reg 16 # b[15:0] $end
+$var reg 16 $ y[15:0] $end
+$scope module dut $end
+$var reg 16 % a[15:0] $end
+$var reg 16 & b[15:0] $end
+$var reg 1 ' op0 $end
+$var reg 1 ( op1 $end
+$var reg 16 ) y[15:0] $end
+$var reg 2 * operation[1:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b00 !
+b1010101010101010 "
+b0101010101010101 #
+b1111111111111111 $
+b1010101010101010 %
+b0101010101010101 &
+0'
+0(
+b1111111111111111 )
+b00 *
+#2000000
+b01 !
+b0101010101010101 $
+1'
+b0101010101010101 )
+b01 *
+#4000000
+b10 !
+b1010101010101011 $
+0'
+1(
+b1010101010101011 )
+b10 *
+#6000000
+b11 !
+b1010101010101001 $
+1'
+b1010101010101001 )
+b11 *
+#8000000

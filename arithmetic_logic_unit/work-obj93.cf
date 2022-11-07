@@ -1,0 +1,17 @@
+v 4
+file . "hack_alu.vhdl" "be2c86a023d7798e0dfb08ad6115a5159c90e2d9" "20221107222728.021":
+  entity hack_alu at 14( 527) + 0 on 31;
+  architecture behavioral of hack_alu at 32( 1132) + 0 on 32;
+  architecture behavioral_2 of hack_alu at 73( 2826) + 0 on 33;
+file . "arithmetic_unit.vhdl" "e597f817e066329b3e43373dfcb20bc3e83d8859" "20221107222728.018":
+  entity arithmetic_unit at 14( 546) + 0 on 23;
+  architecture behavioral of arithmetic_unit at 28( 873) + 0 on 24;
+file . "logic_unit.vhdl" "cdca8c10b4a1041a28d879465dcfa6563eeaa864" "20221107222728.019":
+  entity logic_unit at 14( 537) + 0 on 25;
+  architecture behavioral of logic_unit at 27( 833) + 0 on 26;
+file . "logic_unit_tb.vhdl" "c242462945de4bb05701c1ba1be8d16bea26d810" "20221107222728.020":
+  entity logic_unit_tb at 14( 531) + 0 on 29;
+  architecture behavioral of logic_unit_tb at 20( 612) + 0 on 30;
+file . "arithmetic_unit_tb.vhdl" "c14f8ef93118fb7c22ea4aa43bce7ab14e7e2ae7" "20221107222728.019":
+  entity arithmetic_unit_tb at 14( 538) + 0 on 27;
+  architecture behavioral of arithmetic_unit_tb at 21( 653) + 0 on 28;
