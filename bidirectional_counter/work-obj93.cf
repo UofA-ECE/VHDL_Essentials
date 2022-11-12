@@ -1,0 +1,7 @@
+v 4
+file . "bidirectional_counter.vhdl" "f5d51d53aa0cc832a27e1da83f380d5da0084d0e" "20221103204701.886":
+  entity bidirectional_counter at 14( 561) + 0 on 147;
+  architecture behavioral of bidirectional_counter at 28( 930) + 0 on 148;
+file . "bidirectional_counter_tb.vhdl" "a4979bee0aff351b5053af5815ab19934d502d78" "20221103204701.886":
+  entity bidirectional_counter_tb at 14( 558) + 0 on 149;
+  architecture behavioral of bidirectional_counter_tb at 22( 707) + 0 on 150;

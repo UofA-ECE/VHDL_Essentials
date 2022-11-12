@@ -1,0 +1,92 @@
+$date
+  Thu Nov  3 14:13:11 2022
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module mux_4_tb $end
+$var reg 1 ! d0 $end
+$var reg 1 " d1 $end
+$var reg 1 # d2 $end
+$var reg 1 $ d3 $end
+$var reg 1 % mux_out $end
+$var reg 2 & sel[1:0] $end
+$scope module dut $end
+$var reg 1 ' d0 $end
+$var reg 1 ( d1 $end
+$var reg 1 ) d2 $end
+$var reg 1 * d3 $end
+$var reg 2 + sel[1:0] $end
+$var reg 1 , mux_out $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+0!
+0"
+0#
+0$
+0%
+b00 &
+0'
+0(
+0)
+0*
+b00 +
+0,
+#2000000
+1!
+1#
+1%
+1'
+1)
+1,
+#4000000
+0%
+b01 &
+b01 +
+0,
+#6000000
+1%
+b10 &
+b10 +
+1,
+#8000000
+0%
+b11 &
+b11 +
+0,
+#10000000
+0!
+1"
+0#
+1$
+b00 &
+0'
+1(
+0)
+1*
+b00 +
+#12000000
+1%
+b01 &
+b01 +
+1,
+#14000000
+0%
+b10 &
+b10 +
+0,
+#16000000
+1%
+b11 &
+b11 +
+1,
+#18000000

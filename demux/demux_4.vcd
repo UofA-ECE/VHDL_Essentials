@@ -1,0 +1,62 @@
+$date
+  Thu Nov  3 15:15:22 2022
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module demux_4_tb $end
+$var reg 1 ! d $end
+$var reg 2 " sel[1:0] $end
+$var reg 4 # dmux[3:0] $end
+$scope module dut $end
+$var reg 1 $ d $end
+$var reg 2 % sel[1:0] $end
+$var reg 4 & dmux[3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+1!
+b00 "
+b0001 #
+1$
+b00 %
+b0001 &
+#2000000
+b01 "
+b0010 #
+b01 %
+b0010 &
+#4000000
+b10 "
+b0100 #
+b10 %
+b0100 &
+#6000000
+b11 "
+b1000 #
+b11 %
+b1000 &
+#8000000
+b10 "
+b0100 #
+b10 %
+b0100 &
+#10000000
+b01 "
+b0010 #
+b01 %
+b0010 &
+#12000000
+b00 "
+b0001 #
+b00 %
+b0001 &
+#14000000

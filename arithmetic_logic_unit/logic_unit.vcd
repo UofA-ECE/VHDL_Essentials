@@ -1,0 +1,59 @@
+$date
+  Fri Nov  4 12:55:49 2022
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module logic_unit_tb $end
+$var reg 2 ! operation[1:0] $end
+$var reg 16 " a[15:0] $end
+$var reg 16 # b[15:0] $end
+$var reg 16 $ y[15:0] $end
+$scope module dut $end
+$var reg 16 % a[15:0] $end
+$var reg 16 & b[15:0] $end
+$var reg 1 ' op0 $end
+$var reg 1 ( op1 $end
+$var reg 16 ) y[15:0] $end
+$var reg 2 * operation[1:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b00 !
+b1111111111111111 "
+b0101010101010101 #
+b0101010101010101 $
+b1111111111111111 %
+b0101010101010101 &
+0'
+0(
+b0101010101010101 )
+b00 *
+#2000000
+b01 !
+b1111111111111111 $
+1'
+b1111111111111111 )
+b01 *
+#4000000
+b10 !
+b1010101010101010 $
+0'
+1(
+b1010101010101010 )
+b10 *
+#6000000
+b11 !
+b0000000000000000 $
+1'
+b0000000000000000 )
+b11 *
+#8000000
