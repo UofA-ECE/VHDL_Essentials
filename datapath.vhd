@@ -18,7 +18,7 @@
 -- missing signals are added using format "uXX_out"
 -- alu's output is changed to alu_out to avoid confusion with the alu component
 ----------------------------------------------------------------------------------
-
+-- this is a comment
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
