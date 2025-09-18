@@ -1,8 +1,8 @@
 -----------------------------------------------------------------------------------
--- Filename : my_and.vhdl
+-- Filename : my_or.vhdl
 -- Author : Antonio Alejandro Andara Lara
 -- Date : 25-Oct-10-2022
--- Design Name: and gate
+-- Design Name: or gate
 -- Module Name: VHDL_essentials
 -- Project Name: VHDL_essentials
 -- Description : In this file we go over the process of declaring the architecture
@@ -29,5 +29,5 @@ ARCHITECTURE Behavioral OF my_and IS
 
 BEGIN
     -- direct assignment using the AND function
-    y <= a AND b;
+    y <= a OR b;
 END Behavioral;
