@@ -214,5 +214,65 @@ u_<inst> : <ChildEntity>
 - Use `open` for an intentionally unconnected **output**: `<out_port> => open`.
 - Wrap in a `generate` block for multiple instances.
 
+# Common Type Conversions
+VHDL is strongly typed so explicit conversion is required when mixing integers, `std_logic_vector`, and arithmetic types like `signed` and `unsigned`.
+This section shows **common, synthesizable conversions** used in real designs.
+
+## std_logic_vector ↔ signed / unsigned
+These are type casts (reinterpret bits) not conversions.
+```vhdl
+SIGNAL slv : STD_LOGIC_VECTOR(7 DOWNTO 0);
+SIGNAL sig_u : UNSIGNED(7 DOWNTO 0);
+SIGNAL sig_s : SIGNED(7 DOWNTO 0);
+
+-- Reinterpret bits
+sig_u <= unsigned(slv);
+sig_s <= signed(slv);
+slv   <= STD_LOGIC_VECTOR(sig_u);
+```
+
+## Integer ↔ signed / unsigned
+```vhdl
+SIGNAL val_i : INTEGER RANGE -128 TO 127;
+SIGNAL sig_s : SIGNED(7 DOWNTO 0);
+SIGNAL sig_u : UNSIGNED(7 DOWNTO 0);
+
+-- Integer → signed / unsigned
+sig_s <= to_signed(val_i, sig_s'length);
+sig_u <= to_unsigned(val_i, sig_u'length);
+
+-- signed / unsigned → Integer
+val_i <= to_integer(sig_s);
+val_i <= to_integer(sig_u);
+```
+
+## Integer ↔ std_logic_vector
+Use `to_unsigned` / `to_signed` and `to_integer` from `IEEE.NUMERIC_STD`.
+
+```vhdl
+SIGNAL slv  : STD_LOGIC_VECTOR(7 DOWNTO 0);
+SIGNAL num  : INTEGER;
+
+-- Integer → std_logic_vector
+slv <= STD_LOGIC_VECTOR(to_unsigned(num, slv'length));
+
+-- std_logic_vector → Integer (treat as unsigned)
+num <= to_integer(unsigned(slv));
+```
+### ⚙️ Simulator Surprises to Watch For
+Different VHDL simulators handle **out-of-range conversions** differently.
+When you convert integers to `SIGNED` or `UNSIGNED` values that don’t fit in the target bit width, you may see different results, for example:
+**Vivado XSim** *Wraps bits silently* (mod 2ⁿ behavior). It does not raies **runtime errors**. However other simulators like Questa or GHDL will raise **runtime error** this behavior is tool specific so exercise caution and make sure to follow good coding practices.
+
+✅ **Best Practices**
+- Always constrain integers by using the `RANGE` keyword (`INTEGER RANGE 0 TO 255`, `NATURAL`, etc.) when you know valid limits.
+- Use assertions to catch range violations early:
+  ```vhdl
+  assert (val_i >= 0 and val_i < 256)
+    report "val_i out of range for 8-bit conversion"
+    severity error;
+  ```
+- Don’t rely on simulator-specific overflow behavior. What simulates “fine” in one may fail in another simulator or when implemented in real hardware.
+
 # Contributing
 Spotted an error, missing pattern, or have a useful tip? Feel free to open an issue or submit a pull request. Contributions are welcome!
