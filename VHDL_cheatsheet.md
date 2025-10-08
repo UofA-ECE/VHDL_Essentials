@@ -84,30 +84,6 @@ BEGIN
 END PROCESS;
 ```
 
-# Type Casting and Type Conversion
-There's a difference between `casting` a type and `converting` between types
-- **Type casting**: Tells the compiler to _reinterpret_ the bits of one type as another type. This is allowed only between types that share the same base representation (e.g. `std_logic_vector` ↔ `unsigned` ↔ `signed`).
-
-- **Type conversion**: Actually changes the representation, usually involving arithmetic or resizing (e.g. `unsigned` ↔ `integer`). Conversion requires functions such as `to_unsigned` or `to_integer` from `numeric_std`.
-
-```vhdl
--- Example of casting (same bits, no math):
-signal vec : std_logic_vector(7 downto 0);
-signal u   : unsigned(7 downto 0);
-signal s   : signed(7 downto 0);
-
-u <= unsigned(vec);             -- reinterpret  vector as unsigned
-s <= signed(vec);               -- reinterpret  vector as signed
-vec <= std_logic_vector(u);     -- reinterpret  unsigned as vector
-
--- Example of conversion (representation changes):
-signal cnt_u : unsigned(7 downto 0);
-signal val_i : integer;
-
-val_i  <= to_integer(cnt_u);           -- conversion: unsigned → integer
-cnt_u  <= to_unsigned(val_i, 8);       -- conversion: integer → unsigned
-```
-
 # Generics
 Generics are compile-time parameters that let you resize or tweak a block without editing code. Treat generics like constants for widths, depths, feature flags, etc.; omit `generic map` to use the default value.
 
@@ -214,11 +190,16 @@ u_<inst> : <ChildEntity>
 - Use `open` for an intentionally unconnected **output**: `<out_port> => open`.
 - Wrap in a `generate` block for multiple instances.
 
-# Common Type Conversions
-VHDL is strongly typed so explicit conversion is required when mixing integers, `std_logic_vector`, and arithmetic types like `signed` and `unsigned`.
+# Type Casting and Type Conversion
+VHDL is a strongly typed language so explicit conversion is required when mixing integers, `std_logic_vector`, and arithmetic types like `signed` and `unsigned`.
 This section shows **common, synthesizable conversions** used in real designs.
 
-## std_logic_vector ↔ signed / unsigned
+There's a difference between `casting` a type and `converting` between types
+- **Type casting**: Tells the compiler to _reinterpret_ the bits of one type as another type. This is allowed only between types that share the same base representation (e.g. `std_logic_vector` ↔ `unsigned` ↔ `signed`).
+- **Type conversion**: Actually changes the representation, usually involving arithmetic or resizing (e.g. `unsigned` ↔ `integer`). Conversion requires functions such as `to_unsigned` or `to_integer` from `numeric_std`.
+  
+## Common Casting and Conversion Patterns
+### std_logic_vector ↔ signed / unsigned
 These are type casts (reinterpret bits) not conversions.
 ```vhdl
 SIGNAL slv : STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -231,7 +212,7 @@ sig_s <= signed(slv);
 slv   <= STD_LOGIC_VECTOR(sig_u);
 ```
 
-## Integer ↔ signed / unsigned
+### Integer ↔ signed / unsigned
 ```vhdl
 SIGNAL val_i : INTEGER RANGE -128 TO 127;
 SIGNAL sig_s : SIGNED(7 DOWNTO 0);
@@ -246,7 +227,7 @@ val_i <= to_integer(sig_s);
 val_i <= to_integer(sig_u);
 ```
 
-## Integer ↔ std_logic_vector
+### Integer ↔ std_logic_vector
 Use `to_unsigned` / `to_signed` and `to_integer` from `IEEE.NUMERIC_STD`.
 
 ```vhdl
@@ -259,7 +240,7 @@ slv <= STD_LOGIC_VECTOR(to_unsigned(num, slv'length));
 -- std_logic_vector → Integer (treat as unsigned)
 num <= to_integer(unsigned(slv));
 ```
-### ⚙️ Simulator Surprises to Watch For
+## ⚙️ Simulator Surprises to Watch For
 Different VHDL simulators handle **out-of-range conversions** differently.
 When you convert integers to `SIGNED` or `UNSIGNED` values that don’t fit in the target bit width, you may see different results, for example:
 **Vivado XSim** *Wraps bits silently* (mod 2ⁿ behavior). It does not raies **runtime errors**. However other simulators like Questa or GHDL will raise **runtime error** this behavior is tool specific so exercise caution and make sure to follow good coding practices.
